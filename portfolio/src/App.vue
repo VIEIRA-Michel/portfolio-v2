@@ -4,15 +4,16 @@ import HeroHeader from '@/components/HeroHeader.vue';
 </script>
 
 <template>
-  <div id="app">
-    <Header />
-    <HeroHeader />
-  </div>
+  <Header />
+  <HeroHeader />
 
 </template>
 
 <style>
-* {
-  font-family: 'Montserrat', sans-serif;
+body {
+  max-width: 1200px;
+  background-color: var(--background--primary);
+  margin: auto !important;
+  padding: 10px 20px !important;
 }
 </style>

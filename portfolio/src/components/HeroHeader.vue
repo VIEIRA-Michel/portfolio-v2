@@ -1,47 +1,137 @@
 <script setup>
-import redis from '@/assets/redis.svg';
-import mongodb from '@/assets/mongodb.svg';
+import { computed } from 'vue';
+import { useEffectStore } from '@/shared/stores/effectStore';
+import Technologies from '@/components/Technologies.vue';
+
+
+const wordToDisplay = computed(() => useEffectStore().$state.wordToDisplay);
+
+window.setInterval(function () {
+    useEffectStore().changeWordToDisplay();
+}, 1500)
+
 </script>
 
 <template>
-    <section id="top">
-        <div class="top__infos">
-            <img :src=mongodb alt="">
-        </div>
-        <div class="top__technologies">
-            <div class="top__technologies__column">
-                <div class="top__technologies__column__item">
-                    <fa icon="fa-brands fa-vuejs" />
+    <main>
+        <section class="home">
+            <div class="home__container">
+                <div class="home__container__infos">
+                    <h1 class="home__container__infos__presentation">
+                        Salut, moi c'est Michel 👋
+                    </h1>
+                    <div class="home__container__infos__description">
+                        <p>Développeur</p>
+                        <p :class="[wordToDisplay.length > 1 ? 'animation-exit' : 'animation-entrance']">
+                            {{ wordToDisplay[0]}}
+                        </p>
+                    </div>
+                    <div class="home__container__infos__buttons">
+                        <a class="btn btn-primary">
+                            Me contacter
+                        </a>
+                        <a class="btn btn-secondary">
+                            Voir mes projets
+                        </a>
+                    </div>
                 </div>
-                <div class="top__technologies__column__item">
-                    <fa icon="fa-brands fa-react" />
+                <div class="home__container__technologies">
+                    <Technologies />
                 </div>
-                <div class="top__technologies__column__item">
-                    <fa icon="fa-brands fa-square-js" />
+                <div class="home__container__scrolldown">
+                    <div class="home__container__scrolldown__mouse">
+                        <div class="home__container__scrolldown__mouse__wheel">
+
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="top__technologies__column">
-                <div class="top__technologies__column__item">
-                    <fa icon="fa-brands fa-node-js" />
-                </div>
-                <div class="top__technologies__column__item">
-                    <fa icon="fa-brands fa-html5" />
-                </div>
-                <div class="top__technologies__column__item">
-                    <fa icon="fa-brands fa-css3-alt" />
-                </div>
-            </div>
-            <div class="top__technologies__column">
-                <div class="top__technologies__column__item"></div>
-                <div class="top__technologies__column__item"></div>
-                <div class="top__technologies__column__item"></div>
-            </div>
-            <div class="top__technologies__column">
-                <div class="top__technologies__column__item"></div>
-                <div class="top__technologies__column__item"></div>
-                <div class="top__technologies__column__item"></div>
-            </div>
-        </div>
-        <div class="top__scrolldown"></div>
-    </section>
+        </section>
+    </main>
 </template>
+
+<style scoped lang="scss">
+@import '@/assets/styles/keyframes.scss';
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    .home {
+        display: flex;
+        justify-content: center;
+        color: #fff;
+        margin-top: 50px;
+
+        &__container {
+            width: 100%;
+            ;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: auto;
+            position: relative;
+
+            &__infos {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+
+                &__presentation {
+                    font-size: 32px;
+                    line-height: 60px;
+                    font-weight: 300;
+                }
+
+                &__description {
+                    font-size: 48px;
+
+                    .animation-entrance {
+                        color: var(--primary);
+                        -webkit-animation: entrance 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                        animation: entrance 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    }
+
+                    .animation-exit {
+                        color: var(--primary);
+                        -webkit-animation: exit 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+                        animation: exit 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+                    }
+                }
+            }
+
+            &__scrolldown {
+                position: absolute;
+                left: 50%;
+                bottom: -100px;
+
+
+                &__mouse {
+                    width: 20px;
+                    height: 34px;
+                    position: relative;
+                    border: 2px solid var(--text-color);
+                    border-radius: 15px;
+                    display: flex;
+                    justify-content: center;
+
+                    &__wheel {
+                        height: 4px;
+                        border-radius: 50px;
+                        position: absolute;
+                        top: 8px;
+                        width: 4px;
+                        background-color: var(--text-color);
+                        -webkit-animation: scroll-down 1s ease-in-out infinite alternate both;
+                        animation: scroll-down 1s ease-in-out infinite alternate both;
+                    }
+                }
+            }
+        }
+    }
+}
+</style>

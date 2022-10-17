@@ -1,0 +1,23 @@
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s opacity;
+    text-decoration: none;
+    color: white;
+
+    opacity: 0.8;
+
+    &-primary {
+        background-color: var(--primary);
+        margin-right: 15px;
+    }
+
+    &-secondary {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}

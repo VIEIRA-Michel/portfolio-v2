@@ -1,5 +1,4 @@
-<script>
-import logo from '@/assets/logo-portfolio.svg'
+<script setup>
 </script>
 
 <template>
@@ -28,25 +27,24 @@ import logo from '@/assets/logo-portfolio.svg'
 </template>
 
 <style scoped lang="scss">
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0px;
     backdrop-filter: blur(12px);
-    background: rgba(22, 23, 29, .85);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+    color: var(--text-color);
 
     .header__logo {
         a {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 32px;
+            font-weight: 500;
             color: #fff;
+            text-decoration: none;
 
             span {
                 color: #ff5a5f;
@@ -62,10 +60,10 @@ header {
 
             .header__navbar__list__item {
                 a {
-                    font-size: 1.2rem;
-                    font-weight: 700;
+                    font-size: 17px;
+                    font-weight: 100;
                     color: #fff;
-                    padding: 1rem;
+                    padding: 10px;
                     transition: all .3s ease-in-out;
                     border-radius: 5px;
                     margin-left: 15px;
@@ -73,7 +71,7 @@ header {
 
                     &:hover {
                         color: #ff5a5f;
-                        // background: #ff5a5f;
+                        background: var(--background--secondary);
                     }
                 }
             }
