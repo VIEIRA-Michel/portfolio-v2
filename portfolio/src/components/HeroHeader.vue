@@ -85,10 +85,14 @@ main {
                     font-size: 32px;
                     line-height: 60px;
                     font-weight: 300;
+                    -webkit-animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.1s both;
+                    animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.1s both;
                 }
 
                 &__description {
                     font-size: 48px;
+                    -webkit-animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.4s both;
+                    animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.4s both;
 
                     .animation-entrance {
                         color: var(--primary);
@@ -102,12 +106,35 @@ main {
                         animation: exit 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
                     }
                 }
+
+                &__buttons {
+                    a {
+                        &:first-child {
+                            -webkit-animation: appear-the-button 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.7s both;
+                            animation: appear-the-button 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.7s both;
+                        }
+
+                        &:nth-child(2) {
+                            // appear-the-button
+                            -webkit-animation: appear-the-button 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both;
+                            animation: appear-the-button 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both;
+                        }
+                    }
+
+                }
+            }
+
+            &__technologies {
+                -webkit-animation: appear-technologies 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both;
+                animation: appear-technologies 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both;
             }
 
             &__scrolldown {
                 position: absolute;
                 left: 50%;
                 bottom: -100px;
+                -webkit-animation: appear-mouse 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;
+                animation: appear-mouse 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;
 
 
                 &__mouse {

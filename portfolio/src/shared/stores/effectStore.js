@@ -19,7 +19,6 @@ export const useEffectStore = defineStore({
                 state.wordToDisplay.push(a);
                 state.arr.push(a);
                 setTimeout(() => {
-                    console.log(a);
                     state.wordToDisplay.splice(0, 1);
                 }, 2000)
             })

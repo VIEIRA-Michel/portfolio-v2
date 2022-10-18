@@ -38,6 +38,8 @@ header {
     padding: 10px 0px;
     backdrop-filter: blur(12px);
     color: var(--text-color);
+    -webkit-animation: appear 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.9s both;
+    animation: appear 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.9s both;
 
     .header__logo {
         a {
