@@ -6,6 +6,18 @@ export const useEffectStore = defineStore({
     state: () => ({
         arr: ['Front-End', 'Back-End', 'Full-Stack'],
         wordToDisplay: [],
+        slides: [
+            'https://picsum.photos/id/1022/900/400',
+            'https://picsum.photos/id/1023/900/400',
+            'https://picsum.photos/id/1024/900/400',
+            'https://picsum.photos/id/1025/900/400',
+            'https://picsum.photos/id/1026/900/400',
+            'https://picsum.photos/id/1027/900/400',
+            'https://picsum.photos/id/1028/900/400',
+        ],
+        currentSlide: 0,
+        slideInterval: null,
+        scrollY: 0,
 
     }),
     getters: {
@@ -15,7 +27,6 @@ export const useEffectStore = defineStore({
         changeWordToDisplay() {
             useEffectStore().$patch((state) => {
                 let a = state.arr.shift();
-                console.log(a);
                 state.wordToDisplay.push(a);
                 state.arr.push(a);
                 setTimeout(() => {
@@ -23,5 +34,40 @@ export const useEffectStore = defineStore({
                 }, 2000)
             })
         },
+        setCurrentSlide(index) {
+            useEffectStore().$patch((state) => {
+                state.currentSlide = index;
+            })
+        },
+        initSlideInterval() {
+            useEffectStore().$patch((state) => {
+                state.slideInterval = setInterval(() => {
+                    const index = state.currentSlide < state.slides.length - 1 ? state.currentSlide + 1 : 0;
+                    useEffectStore().setCurrentSlide(index);
+                }, 3000);
+            })
+        },
+        previousSlide() {
+            useEffectStore().$patch((state) => {
+                const index = state.currentSlide > 0 ? state.currentSlide - 1 : state.slides.length - 1;
+                useEffectStore().setCurrentSlide(index);
+            })
+        },
+        nextSlide() {
+            useEffectStore().$patch((state) => {
+                const index = state.currentSlide < state.slides.length - 1 ? state.currentSlide + 1 : 0;
+                useEffectStore().setCurrentSlide(index);
+            })
+        },
+        clearInterval() {
+            useEffectStore().$patch((state) => {
+                clearInterval(state.slideInterval);
+            })
+        },
+        setScrollY(scroll) {
+            useEffectStore().$patch((state) => {
+                state.scrollY = scroll;
+            })
+        }
     }
 });
