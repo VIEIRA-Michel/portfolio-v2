@@ -1,8 +1,8 @@
 <script setup>
 import Header from '@/components/Header.vue';
 import HeroHeader from '@/components/HeroHeader.vue';
-import AboutMe from '@/components/AboutMe.vue';
 import Carousel from '@/components/Carousel.vue';
+import AboutMe from '@/components/AboutMe.vue';
 import { useEffectStore } from '@/shared/stores/effectStore';
 import { watch, ref, onMounted } from 'vue';
 
@@ -15,12 +15,17 @@ onMounted(() => {
 
 <template>
   <Header />
-  <main @scroll="getScroll($event)">
+  <main>
     <HeroHeader />
+    <AboutMe />
     <Carousel />
   </main>
 </template>
 <style>
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   max-width: 1200px;
   background-color: var(--background--primary);
@@ -31,5 +36,6 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  gap: 100px;
 }
 </style>

@@ -7,14 +7,15 @@ export const useEffectStore = defineStore({
         arr: ['Front-End', 'Back-End', 'Full-Stack'],
         wordToDisplay: [],
         slides: [
-            'https://picsum.photos/id/1022/900/400',
-            'https://picsum.photos/id/1023/900/400',
-            'https://picsum.photos/id/1024/900/400',
-            'https://picsum.photos/id/1025/900/400',
-            'https://picsum.photos/id/1026/900/400',
-            'https://picsum.photos/id/1027/900/400',
-            'https://picsum.photos/id/1028/900/400',
+            'https://picsum.photos/id/1022/1200/400',
+            'https://picsum.photos/id/1023/1200/400',
+            'https://picsum.photos/id/1024/1200/400',
+            'https://picsum.photos/id/1025/1200/400',
+            'https://picsum.photos/id/1026/1200/400',
+            'https://picsum.photos/id/1027/1200/400',
+            'https://picsum.photos/id/1028/1200/400',
         ],
+        projects: [],
         currentSlide: 0,
         slideInterval: null,
         scrollY: 0,
@@ -66,7 +67,7 @@ export const useEffectStore = defineStore({
         },
         setScrollY(scroll) {
             useEffectStore().$patch((state) => {
-                state.scrollY = scroll;
+                state.scrollY = scroll * 1.67;
             })
         }
     }

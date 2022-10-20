@@ -9,10 +9,10 @@
         <nav class="header__navbar">
             <ul class="header__navbar__list">
                 <li class="header__navbar__list__item">
-                    <a>À propos</a>
+                    <a href="#about">À propos</a>
                 </li>
                 <li class="header__navbar__list__item">
-                    <a>
+                    <a href="#projects">
                         Projets
                     </a>
                 </li>
@@ -44,7 +44,7 @@ header {
     .header__logo {
         a {
             font-size: 32px;
-            font-weight: 500;
+            font-weight: 600;
             color: #fff;
             text-decoration: none;
 

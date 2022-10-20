@@ -31,17 +31,11 @@ import { useEffectStore } from '@/shared/stores/effectStore';
     left: 0;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    border-top: 2px solid #f3f3f3;
-    border-right: 2px solid #f3f3f3;
-    border-bottom: 2px solid #f3f3f3;
 }
 
 .right {
     right: 0;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    border-top: 2px solid #f3f3f3;
-    border-left: 2px solid #f3f3f3;
-    border-bottom: 2px solid #f3f3f3;
 }
 </style>

@@ -33,6 +33,7 @@ window.setInterval(function () {
                         Voir mes projets
                     </a>
                 </div>
+
             </div>
             <div class="home__container__technologies">
                 <Technologies />
@@ -66,8 +67,9 @@ window.setInterval(function () {
 
     &__container {
         width: 100%;
-        ;
         display: flex;
+        flex-wrap: wrap;
+        height: inherit;
         flex-direction: row;
         justify-content: space-between;
         margin: auto;
@@ -75,8 +77,19 @@ window.setInterval(function () {
 
         &__infos {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
             flex-direction: column;
+
+            @media (min-width: 992px) {
+                display: flex;
+                text-align: left;
+                width: 50%;
+            }
+
+            @media (max-width: 991px) {
+                text-align: center;
+                width: 100%;
+            }
 
             &__presentation {
                 font-size: 32px;
@@ -87,10 +100,13 @@ window.setInterval(function () {
             }
 
             &__description {
-                font-size: 48px;
-                font-weight: 500;
                 -webkit-animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.4s both;
                 animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.4s both;
+
+                p {
+                    font-size: 48px;
+                    font-weight: 500;
+                }
 
                 .animation-entrance {
                     color: var(--primary);
@@ -107,6 +123,7 @@ window.setInterval(function () {
 
             &__buttons {
                 a {
+
                     &:first-child {
                         -webkit-animation: appear-the-button 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.7s both;
                         animation: appear-the-button 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.7s both;
@@ -116,20 +133,40 @@ window.setInterval(function () {
                         -webkit-animation: appear-the-button 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both;
                         animation: appear-the-button 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both;
                     }
+
+                    &:hover {
+                        opacity: 1 !important;
+                    }
                 }
 
             }
+
+
         }
 
         &__technologies {
-            -webkit-animation: appear-technologies 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both;
-            animation: appear-technologies 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both;
+            display: none;
+
+            @media (min-width: 992px) {
+                display: flex;
+                align-items: center;
+                width: 50%;
+                -webkit-animation: appear-technologies 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both;
+                animation: appear-technologies 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both;
+
+                .technologies__list {
+                    justify-content: flex-end;
+                }
+            }
+
+
         }
 
         &__scrolldown {
-            position: absolute;
-            left: 50%;
-            bottom: -100px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            align-items: center;
             -webkit-animation: appear-mouse 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;
             animation: appear-mouse 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;
 
