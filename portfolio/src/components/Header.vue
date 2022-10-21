@@ -17,7 +17,7 @@
                     </a>
                 </li>
                 <li class="header__navbar__list__item">
-                    <a>
+                    <a href="#contact">
                         Contact
                     </a>
                 </li>
@@ -69,6 +69,7 @@ header {
                     transition: all .3s ease-in-out;
                     border-radius: 5px;
                     margin-left: 15px;
+                    text-decoration: none;
                     cursor: pointer;
 
                     &:hover {

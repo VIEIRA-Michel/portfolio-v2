@@ -3,6 +3,7 @@ import Header from '@/components/Header.vue';
 import HeroHeader from '@/components/HeroHeader.vue';
 import Carousel from '@/components/Carousel.vue';
 import AboutMe from '@/components/AboutMe.vue';
+import Footer from '@/components/Footer.vue';
 import { useEffectStore } from '@/shared/stores/effectStore';
 import { watch, ref, onMounted } from 'vue';
 
@@ -20,6 +21,7 @@ onMounted(() => {
     <AboutMe />
     <Carousel />
   </main>
+  <Footer />
 </template>
 <style>
 * {
@@ -36,6 +38,6 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  /* gap: 100px; */
 }
 </style>

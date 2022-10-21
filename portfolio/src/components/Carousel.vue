@@ -43,6 +43,7 @@ onMounted(() => {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    height: 100vh;
 
     .carousel-container {
         .animation-entrance {
