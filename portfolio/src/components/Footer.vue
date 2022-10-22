@@ -16,7 +16,7 @@
                 </a>
             </div>
             <div class="footer__container__copyright">
-                <p>© 20212 michelvieira.com</p>
+                <p>© 2022 michelvieira.com</p>
             </div>
             <div class="footer__container__logo">
                 <a href="">mv<span>.</span></a>

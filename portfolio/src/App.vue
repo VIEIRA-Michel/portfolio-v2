@@ -5,17 +5,28 @@ import Carousel from '@/components/Carousel.vue';
 import AboutMe from '@/components/AboutMe.vue';
 import Footer from '@/components/Footer.vue';
 import { useEffectStore } from '@/shared/stores/effectStore';
-import { watch, ref, onMounted } from 'vue';
+import { watch, ref, onMounted, computed } from 'vue';
 
 onMounted(() => {
   window.addEventListener('scroll', (e) => {
     useEffectStore().setScrollY(window.scrollY);
   });
+  // const mouse = window.scrollY + document.querySelector('.home__container__scrolldown__mouse').getBoundingClientRect().top;
 });
+
+function scrollToTop(e) {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
 </script>
 
 <template>
   <Header />
+  <div @click="scrollToTop" class="backtotop">
+    <fa icon="fa-solid fa-arrow-up" />
+  </div>
   <main>
     <HeroHeader />
     <AboutMe />
@@ -23,9 +34,29 @@ onMounted(() => {
   </main>
   <Footer />
 </template>
-<style>
+<style lang="scss">
 * {
   scroll-behavior: smooth;
+}
+
+.backtotop {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  cursor: pointer;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  background-color: var(--primary);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    height: 18px;
+    width: 18px;
+  }
 }
 
 body {

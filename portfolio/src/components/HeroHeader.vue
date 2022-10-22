@@ -26,10 +26,10 @@ window.setInterval(function () {
                     </p>
                 </div>
                 <div class="home__container__infos__buttons">
-                    <a class="btn btn-primary">
+                    <a href="mailto:michelvieira.pro@gmail.com" class="btn btn-primary">
                         Me contacter
                     </a>
-                    <a class="btn btn-secondary">
+                    <a href="#projects" class="btn btn-secondary">
                         Voir mes projets
                     </a>
                 </div>
