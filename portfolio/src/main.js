@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import { createPinia } from 'pinia';
+import { MotionPlugin } from '@vueuse/motion';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -13,6 +14,6 @@ import "@/assets/styles/index.scss";
 library.add(fas, fab, far);
 const app = createApp(App).component('fa', FontAwesomeIcon);
 
-
+app.use(MotionPlugin);
 app.use(createPinia());
 app.mount("#app");

@@ -21,7 +21,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <section id="projects">
+    <section id="projects" v-motion-fade-visible>
         <h2><span>•</span>Mes projets</h2>
         <div class="carousel-container">
             <div :class="[display ? 'animation-entrance' : 'carousel-inner']">
@@ -46,6 +46,10 @@ onMounted(() => {
     height: 100vh;
 
     .carousel-container {
+        margin: 0 auto 0 auto;
+        width: 70%;
+        padding: 20px;
+
         .animation-entrance {
             visibility: visible;
             position: relative;
@@ -69,7 +73,7 @@ onMounted(() => {
         font-size: 24px;
         font-weight: 600;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         color: var(--text-color);
         color: #ffffff !important;
         -webkit-animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.6s both;

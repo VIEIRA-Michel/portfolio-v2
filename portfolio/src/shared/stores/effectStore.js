@@ -1,22 +1,14 @@
 import { defineStore } from 'pinia';
-
+import { data } from '@/data/data.js';
 
 export const useEffectStore = defineStore({
     id: "effectStore",
     state: () => ({
         arr: ['Front-End', 'Back-End', 'Full-Stack'],
         wordToDisplay: [],
-        slides: [
-            'https://picsum.photos/id/1022/1200/400',
-            'https://picsum.photos/id/1023/1200/400',
-            'https://picsum.photos/id/1024/1200/400',
-            'https://picsum.photos/id/1025/1200/400',
-            'https://picsum.photos/id/1026/1200/400',
-            'https://picsum.photos/id/1027/1200/400',
-            'https://picsum.photos/id/1028/1200/400',
-        ],
-        projects: [],
+        slides: data,
         currentSlide: 0,
+        newSlide: null,
         slideInterval: null,
         scrollY: 0,
 

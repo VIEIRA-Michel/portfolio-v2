@@ -4,8 +4,12 @@ import { useEffectStore } from '@/shared/stores/effectStore';
 </script>
 
 <template>
-    <button class="carousel-control left" @click="useEffectStore().previousSlide">Précédent</button>
-    <button class="carousel-control right" @click="useEffectStore().nextSlide">Suivant</button>
+    <button class="carousel-control left" @click="useEffectStore().previousSlide">
+        <fa icon="fa-solid fa-arrow-left-long" />
+    </button>
+    <button class="carousel-control right" @click="useEffectStore().nextSlide">
+        <fa icon="fa-solid fa-arrow-right-long" />
+    </button>
 </template>
 
 <style scoped lang="scss">
@@ -15,11 +19,15 @@ import { useEffectStore } from '@/shared/stores/effectStore';
     display: inline-block;
     position: absolute;
     height: 50px;
-    width: 100px;
+    width: 50px;
     top: calc(50% - 25px);
     color: #f3f3f3;
     cursor: pointer;
     padding: 10px;
+
+    svg {
+        font-size: 24px;
+    }
 
     &:hover {
         background-color: rgba(0, 0, 0, 0.8);

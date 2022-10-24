@@ -4,7 +4,7 @@ import picture from '@/assets/images/mv.jpg';
 </script>
 
 <template>
-    <section id="about">
+    <section id="about" v-motion-fade-visible>
         <h2><span>•</span>À propos de moi</h2>
         <div class="about__container">
             <div class="about__container__avatar">
@@ -114,7 +114,6 @@ import picture from '@/assets/images/mv.jpg';
 
         &__details {
             background-color: var(--background--secondary);
-            border: 2px solid #f3f3f3;
             width: 70%;
             padding: 20px;
             display: flex;

@@ -22,7 +22,7 @@ window.setInterval(function () {
                 <div class="home__container__infos__description">
                     <p>Développeur</p>
                     <p :class="[wordToDisplay.length > 1 ? 'animation-exit' : 'animation-entrance']">
-                        {{ wordToDisplay[0]}}
+                        {{ wordToDisplay[0] }}
                     </p>
                 </div>
                 <div class="home__container__infos__buttons">

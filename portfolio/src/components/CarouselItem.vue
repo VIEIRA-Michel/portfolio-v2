@@ -4,19 +4,24 @@ import { computed } from 'vue';
 
 const slides = computed(() => useEffectStore().$state.slides);
 const currentSlide = computed(() => useEffectStore().$state.currentSlide);
-
+console.log(slides);
 </script>
 
 <template>
-    <div class="carousel-item">
-        <img :src="slides[currentSlide]" alt="">
+    <div :class="`carousel-item ${currentSlide}`" :style="`${slides[currentSlide].background}`">
+        <img :src="slides[currentSlide].picture" class="carousel-item__picture" alt="">
         <div class="carousel-item__banner">
             <div class="carousel-item__banner__description">
-                <h2>Slide {{ currentSlide + 1 }}</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
+                <h2>{{ slides[currentSlide].title }}</h2>
+                <div class="carousel-item__banner__description__techno">
+                    <div v-for="techno in slides[currentSlide].techno" :key="techno.id"
+                        class="carousel-item__banner__description__techno__item">
+                        <img :src="techno.picture" alt="" :style="`${techno.style}`">
+                    </div>
+                </div>
             </div>
             <div class="carousel-item__banner__button">
-                <button>Accéder au projet</button>
+                <a :href="slides[currentSlide].url">Accéder au projet</a>
             </div>
         </div>
     </div>
@@ -29,6 +34,14 @@ const currentSlide = computed(() => useEffectStore().$state.currentSlide);
     left: 0;
     right: 0;
     bottom: 0;
+    padding: 20px 20px 0;
+    border-radius: 20px;
+
+    &__picture {
+        width: 85%;
+        display: flex;
+        margin: auto;
+    }
 
     &__banner {
         position: absolute;
@@ -39,7 +52,7 @@ const currentSlide = computed(() => useEffectStore().$state.currentSlide);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        background: rgba(0, 0, 0, 0.5);
+        background: var(--background--secondary);
 
         &__description {
             color: #fff;
@@ -48,6 +61,27 @@ const currentSlide = computed(() => useEffectStore().$state.currentSlide);
             flex-direction: column;
             align-items: flex-start;
             justify-content: space-evenly;
+
+            h2 {
+                font-weight: 600;
+                font-size: 18px;
+            }
+
+            &__techno {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                &__item {
+                    width: 30px;
+
+                    img {
+                        height: 30px;
+                        background-size: cover;
+                        filter: invert(100%) sepia(1%) saturate(6446%) hue-rotate(180deg) brightness(92%) contrast(104%);
+                    }
+                }
+            }
         }
 
         &__button {
@@ -58,13 +92,14 @@ const currentSlide = computed(() => useEffectStore().$state.currentSlide);
             text-align: center;
             margin: 20px;
 
-            button {
+            a {
                 opacity: 0.8;
                 background: var(--primary);
                 color: #fff;
                 border: none;
                 border-radius: 5px;
                 padding: 10px 20px;
+                text-decoration: none;
                 cursor: pointer;
 
                 &:hover {
