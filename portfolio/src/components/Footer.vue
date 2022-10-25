@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
     <footer class="footer">
         <div class="footer__container">
@@ -40,6 +37,11 @@
         padding-bottom: 40px;
         border-top: 2px solid var(--background--secondary);
 
+        @media (max-width: 991px) {
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
         &__copyright {}
 
         &__contact {
@@ -76,6 +78,14 @@
         }
 
         &__logo {
+            @media (max-width: 991px) {
+                display: hidden;
+            }
+
+            @media (min-width: 992px) {
+                display: block;
+            }
+
             a {
                 font-size: 32px;
                 font-weight: 600;

@@ -4,7 +4,7 @@ import picture from '@/assets/images/mv.jpg';
 </script>
 
 <template>
-    <section id="about" v-motion-fade-visible>
+    <section class="about">
         <h2><span>•</span>À propos de moi</h2>
         <div class="about__container">
             <div class="about__container__avatar">
@@ -13,66 +13,29 @@ import picture from '@/assets/images/mv.jpg';
             <div class="about__container__details">
                 <div class="about__container__details__paragraph">
                     <p>
-                        Quand j'étais plus jeune tandis que tous les enfants de mon âge rêvaient d'être pompier ou
-                        docteur, moi je voulais être
-                        informaticien, cependant n'étant pas un élève très brillant j'ai dû me contraindre à me tourner
-                        vers un autre secteur, car mes notes ne me permettait pas d'intégrer la filière informatique.
+                        En 2020, suite à la pandémie je prends conscience de la réalité, il était temps pour moi d'agir
+                        et de me former à un métier qui correspondrait à mes attentes.
+                        Je décide donc de quitter mon emploi et de me tourner vers une formation de développeur web
+                        proposé par O'clock en auto-financement.
                     </p>
                     <p>
-                        J'ai donc fait de la comptabilité, puis de la plomberie et pour finir de la maçonnerie, mais je
-                        finissais par abandonner en cours de route, car cela ne m'intéressait pas.
-                    </p>
-                    <p>
-                        Une fois l'âge légal pour travailler atteint je me suis orienté vers le secteur de la logistique
-                        où j'ai travaillé jusqu'à 2020.
-                    </p>
-                    <p>
-                        En 2020, suite à la pandémie je me rends compte que le temps était compté, que je devais agir
-                        maintenant, que je devais faire quelque chose pour moi, pour mon avenir, qu'il était
-                        inadmissible de vivre sans faire le
-                        nécessaire pour réaliser ses rêves, même si ce n'est que les effleurer du bout des doigts.
-                    </p>
-                    <p>
-                        Je décide donc de quitter mon emploi et de me tourner vers les métiers du numérique.
-                    </p>
-                    <p>
-                        Voilà maintenant 1 ans et demie que j'ai décidé de changer de voie, j'ai intégré un bootcamp du
-                        nom de O'Clock, cependant en cours de route je me rends compte que le format des cours ne me
-                        convenait pas je
-                        n'arrivais pas à mémoriser les notions de la veille, car tous les jours nous apprenions quelques
-                        choses de nouveau, c'était
-                        à la fois épuisant mentalement et soporifique, j'en suis ressorti avec énormément de lacune.
-                        Reproduire une maquette en HTML et CSS était inconcevable à mes yeux, je n'étais clairement pas
-                        employable, je m'étais presque convaincu que je n'étais peut-être pas fait pour le code.
-                    </p>
-                    <p>
+                        Ma première formation ne m'a pas apporté entière satisfaction car le format des cours étaient
+                        loin d'être adapté pour une parfaite assimilation des connaissances.
                         Ayant le désir d'en apprendre d'avantages et de consolider les notions que j'avais acquises j'ai
-                        recherché par la suite une formation plus complète, mais cette fois-ci j'ai décidé de changer de
-                        méthodologie et
-                        d'apprendre en autodidacte en allant chercher les informations directement à leurs sources.
+                        recherché par la suite une formation plus complète, tout en changeant de
+                        méthodologie en apprenant cette fois ci en autodidacte.
                     </p>
                     <p>
-                        Openclassrooms proposait de se former en autodidacte, d'ailleurs ce format était tout nouveau
-                        pour moi. J'étais longtemps persuadé que le présentiel était la seule façon d'apprendre mais
-                        j'ai
-                        été agréablement surpris par la qualité des cours et le fait d'avoir différent projets à
-                        réaliser m'a
-                        permis de me concentrer sur le code et de ne pas me disperser sur des notions théoriques.
-                    </p>
-                    <p>
+                        J'ai donc commencé à suivre les cours d'Openclassrooms et j'ai décidé par la même occasion de
+                        faire leur formation de développeur web pour pouvoir obtenir un titre professionnel à la fin.
                         En parallèle je me servais également de Dyma pour apprendre des choses qui n'étaient pas
                         présentes dans les cours cela m'a permis d'apprendre le framework VueJS avec lequel ce portfolio
-                        est apparu.
-                    </p>
-                    <p>
-                        Grâce à ses deux plateformes j'ai pris plaisir à apprendre et mon amour pour le code est
-                        revenu.
+                        est conçu.
+                        Grâce à ses deux plateformes j'ai pris plaisir à apprendre et mes doutes se sont dissipés.
                     </p>
                     <p>
                         Aujourd'hui je sais que le chemin menant à la réussite est encore long, mais j'ai appris à aimer
                         le processus plutôt que la récompense.
-                    </p>
-                    <p>
                         Le code est devenu pour moi un moyen de m'exprimer, un moyen de faire parler mon art,
                         et d'insuffler la vie à mes idées.
                     </p>
@@ -88,7 +51,7 @@ import picture from '@/assets/images/mv.jpg';
     font-family: 'Poppins', sans-serif;
 }
 
-#about {
+.about {
     h2 {
         font-size: 24px;
         font-weight: 600;
@@ -104,7 +67,7 @@ import picture from '@/assets/images/mv.jpg';
         }
     }
 
-    .about__container {
+    &__container {
         display: flex;
         flex-direction: column;
         position: relative;
@@ -114,8 +77,8 @@ import picture from '@/assets/images/mv.jpg';
 
         &__details {
             background-color: var(--background--secondary);
-            width: 70%;
-            padding: 20px;
+            width: 90%;
+            padding: 10px;
             display: flex;
             justify-content: center;
             flex-direction: column;

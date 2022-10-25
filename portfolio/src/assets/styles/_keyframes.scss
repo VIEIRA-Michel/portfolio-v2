@@ -230,6 +230,26 @@
   }
 }
 
+@-webkit-keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 
 @-webkit-keyframes appear-the-text {
   0% {
@@ -400,5 +420,25 @@
 
   100% {
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes unroll-menu {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes unroll-menu {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

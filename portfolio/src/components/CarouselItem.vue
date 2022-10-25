@@ -2,26 +2,31 @@
 import { useEffectStore } from '@/shared/stores/effectStore';
 import { computed } from 'vue';
 
-const slides = computed(() => useEffectStore().$state.slides);
 const currentSlide = computed(() => useEffectStore().$state.currentSlide);
-console.log(slides);
+
+const props = defineProps({
+    slide: {
+        type: Object,
+        required: true,
+    },
+});
 </script>
 
 <template>
-    <div :class="`carousel-item ${currentSlide}`" :style="`${slides[currentSlide].background}`">
-        <img :src="slides[currentSlide].picture" class="carousel-item__picture" alt="">
+    <div :class="`carousel-item ${props.slide.id}`" :style="`${props.slide.background}`">
+        <img :src="props.slide.picture" class="carousel-item__picture" alt="">
         <div class="carousel-item__banner">
             <div class="carousel-item__banner__description">
-                <h2>{{ slides[currentSlide].title }}</h2>
+                <h2>{{ props.slide.title }}</h2>
                 <div class="carousel-item__banner__description__techno">
-                    <div v-for="techno in slides[currentSlide].techno" :key="techno.id"
+                    <div v-for="techno in props.slide.techno" :key="techno.id"
                         class="carousel-item__banner__description__techno__item">
                         <img :src="techno.picture" alt="" :style="`${techno.style}`">
                     </div>
                 </div>
             </div>
             <div class="carousel-item__banner__button">
-                <a :href="slides[currentSlide].url">Accéder au projet</a>
+                <a :href="props.slide.url">Accéder au projet</a>
             </div>
         </div>
     </div>

@@ -97,15 +97,24 @@ window.setInterval(function () {
                 font-weight: 300;
                 -webkit-animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.1s both;
                 animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.1s both;
+
+                @media (max-width: 991px) {
+                    font-size: 28px;
+                }
             }
 
             &__description {
                 -webkit-animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.4s both;
                 animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.4s both;
 
+
                 p {
                     font-size: 48px;
                     font-weight: 500;
+
+                    @media (max-width: 991px) {
+                        font-size: 34px;
+                    }
                 }
 
                 .animation-entrance {
@@ -122,6 +131,13 @@ window.setInterval(function () {
             }
 
             &__buttons {
+                display: flex;
+                justify-content: center;
+
+                @media (min-width: 992px) {
+                    justify-content: flex-start;
+                }
+
                 a {
 
                     &:first-child {
@@ -166,7 +182,7 @@ window.setInterval(function () {
             display: flex;
             justify-content: center;
             width: 100%;
-            align-items: center;
+            // align-items: center;
             -webkit-animation: appear-mouse 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;
             animation: appear-mouse 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;
 

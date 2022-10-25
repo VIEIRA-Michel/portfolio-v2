@@ -8,10 +8,14 @@ export const useEffectStore = defineStore({
         wordToDisplay: [],
         slides: data,
         currentSlide: 0,
-        newSlide: null,
-        slideInterval: null,
         scrollY: 0,
-
+        newCurrentSlide: 0,
+        mousePosition: 0,
+        headerY: 0,
+        heroHeaderY: 0,
+        aboutY: 0,
+        projectsY: 0,
+        footerY: 0,
     }),
     getters: {
 
@@ -30,6 +34,9 @@ export const useEffectStore = defineStore({
         setCurrentSlide(index) {
             useEffectStore().$patch((state) => {
                 state.currentSlide = index;
+                setTimeout(() => {
+                    state.newCurrentSlide = index;
+                }, 100)
             })
         },
         initSlideInterval() {
@@ -59,8 +66,17 @@ export const useEffectStore = defineStore({
         },
         setScrollY(scroll) {
             useEffectStore().$patch((state) => {
-                state.scrollY = scroll * 1.67;
+                state.scrollY = scroll;
             })
-        }
+        },
+        setPositionY(headerY, heroHeaderY, aboutY, projectsY, footerY) {
+            useEffectStore().$patch((state) => {
+                state.headerY = headerY;
+                state.heroHeaderY = heroHeaderY;
+                state.aboutY = aboutY;
+                state.projectsY = projectsY;
+                state.footerY = footerY;
+            })
+        },
     }
 });

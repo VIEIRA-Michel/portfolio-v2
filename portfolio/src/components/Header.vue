@@ -1,4 +1,6 @@
 <script setup>
+import { computed, ref } from 'vue';
+const displayMenu = ref(false);
 </script>
 
 <template>
@@ -23,10 +25,32 @@
                 </li>
             </ul>
         </nav>
+        <div class="header__menu" @click="displayMenu = !displayMenu">
+            <fa icon="fa-solid fa-bars" />
+        </div>
+        <div :class="[displayMenu ? 'header__menu__list active' : 'header__menu__list hidden']">
+            <ul>
+                <li>
+                    <a href="#about">À propos</a>
+                </li>
+                <li>
+                    <a href="#projects">
+                        Projets
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
     </header>
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/styles/keyframes.scss';
+
 * {
     font-family: 'Poppins', sans-serif;
 }
@@ -56,6 +80,10 @@ header {
     }
 
     .header__navbar {
+        @media (max-width: 991px) {
+            display: none;
+        }
+
         .header__navbar__list {
             display: flex;
             list-style: none;
@@ -77,6 +105,30 @@ header {
                         background: var(--background--secondary);
                     }
                 }
+            }
+        }
+    }
+
+    .header__menu {
+        display: none;
+
+        @media (max-width: 991px) {
+            display: block;
+            cursor: pointer;
+        }
+
+        &__list {
+
+            &.active {
+                -webkit-animation: unroll-menu 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+                animation: unroll-menu 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+                display: block;
+            }
+
+            &.hidden {
+                -webkit-animation: unroll-menu 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) reverse both;
+                animation: unroll-menu 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) reverse both;
+                display: none;
             }
         }
     }

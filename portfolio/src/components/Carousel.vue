@@ -5,6 +5,9 @@ import { watch, ref, computed, onMounted } from 'vue';
 import { useEffectStore } from '@/shared/stores/effectStore';
 
 const scrollY = computed(() => useEffectStore().$state.scrollY);
+const slides = computed(() => useEffectStore().$state.slides);
+const currentSlide = computed(() => useEffectStore().$state.currentSlide);
+const newCurrentSlide = computed(() => useEffectStore().$state.newCurrentSlide);
 const display = ref(null);
 
 onMounted(() => {
@@ -21,12 +24,17 @@ onMounted(() => {
 </script>
 
 <template>
-    <section id="projects" v-motion-fade-visible>
+    <section class="projects">
         <h2><span>•</span>Mes projets</h2>
         <div class="carousel-container">
-            <div :class="[display ? 'animation-entrance' : 'carousel-inner']">
-                <CarouselItem />
-                <CarouselControls />
+            <!-- <div :class="[display ? 'animation-entrance' : 'carousel-inner']"> -->
+            <div class="animation-entrance">
+                <Transition name="fadeRight" mode="out-in">
+                    <template v-if="currentSlide === newCurrentSlide">
+                        <CarouselItem :slide="slides[currentSlide]" />
+                    </template>
+                </Transition>
+                <CarouselControls @previous="useEffectStore().previousSlide" @next="useEffectStore().nextSlide" />
             </div>
         </div>
     </section>
@@ -39,7 +47,7 @@ onMounted(() => {
     font-family: 'Poppins', sans-serif;
 }
 
-#projects {
+.projects {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -84,5 +92,18 @@ onMounted(() => {
             margin-right: 5px;
         }
     }
+}
+
+.fadeRight-leave-to {
+    opacity: 0;
+}
+
+.fadeRight-enter-active,
+.fadeRight-leave-active {
+    transition: all 0.4s;
+}
+
+.fadeRight-enter-from {
+    opacity: 0;
 }
 </style>
