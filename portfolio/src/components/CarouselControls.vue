@@ -12,33 +12,36 @@
 
 <style scoped lang="scss">
 .carousel-control {
-    background-color: rgba(255, 90, 95, 0.8);
+    background-color: rgba(0, 0, 0, 0.2);
     border: none;
     display: inline-block;
     position: absolute;
-    height: 50px;
-    width: 50px;
-    top: 50%;
+    bottom: 50%;
     color: #f3f3f3;
     cursor: pointer;
-    padding: 20px;
-    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
 
     svg {
-        font-size: 12px;
+        font-size: 18px;
     }
 
     &:hover {
-        background-color: rgba(255, 90, 95, 1);
+        background-color: rgba(0, 0, 0, 0.5);
         transition: 0.3s all;
     }
 }
 
 .left {
-    left: -15px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    left: 0;
 }
 
 .right {
-    right: -15px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    right: 0;
 }
 </style>

@@ -8,14 +8,7 @@ export const useEffectStore = defineStore({
         wordToDisplay: [],
         slides: data,
         currentSlide: 0,
-        scrollY: 0,
         newCurrentSlide: 0,
-        mousePosition: 0,
-        headerY: 0,
-        heroHeaderY: 0,
-        aboutY: 0,
-        projectsY: 0,
-        footerY: 0,
     }),
     getters: {
 
@@ -39,14 +32,6 @@ export const useEffectStore = defineStore({
                 }, 100)
             })
         },
-        initSlideInterval() {
-            useEffectStore().$patch((state) => {
-                state.slideInterval = setInterval(() => {
-                    const index = state.currentSlide < state.slides.length - 1 ? state.currentSlide + 1 : 0;
-                    useEffectStore().setCurrentSlide(index);
-                }, 3000);
-            })
-        },
         previousSlide() {
             useEffectStore().$patch((state) => {
                 const index = state.currentSlide > 0 ? state.currentSlide - 1 : state.slides.length - 1;
@@ -57,25 +42,6 @@ export const useEffectStore = defineStore({
             useEffectStore().$patch((state) => {
                 const index = state.currentSlide < state.slides.length - 1 ? state.currentSlide + 1 : 0;
                 useEffectStore().setCurrentSlide(index);
-            })
-        },
-        clearInterval() {
-            useEffectStore().$patch((state) => {
-                clearInterval(state.slideInterval);
-            })
-        },
-        setScrollY(scroll) {
-            useEffectStore().$patch((state) => {
-                state.scrollY = scroll;
-            })
-        },
-        setPositionY(headerY, heroHeaderY, aboutY, projectsY, footerY) {
-            useEffectStore().$patch((state) => {
-                state.headerY = headerY;
-                state.heroHeaderY = heroHeaderY;
-                state.aboutY = aboutY;
-                state.projectsY = projectsY;
-                state.footerY = footerY;
             })
         },
     }

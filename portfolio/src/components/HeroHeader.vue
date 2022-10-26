@@ -139,20 +139,28 @@ window.setInterval(function () {
                 }
 
                 a {
+                    transition: 0.3s all ease-in-out;
 
                     &:first-child {
                         -webkit-animation: appear-the-button 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.7s both;
                         animation: appear-the-button 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.7s both;
+                        background: var(--primary-light);
+
+                        &:hover {
+                            background: var(--primary);
+                        }
                     }
 
                     &:nth-child(2) {
                         -webkit-animation: appear-the-button 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both;
                         animation: appear-the-button 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both;
+
+                        &:hover {
+                            background: rgba(255, 255, 255, 0.2);
+                        }
                     }
 
-                    &:hover {
-                        opacity: 1 !important;
-                    }
+
                 }
 
             }

@@ -5,12 +5,14 @@ import Carousel from '@/components/Carousel.vue';
 import AboutMe from '@/components/AboutMe.vue';
 import Footer from '@/components/Footer.vue';
 import { useEffectStore } from '@/shared/stores/effectStore';
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed, watch } from 'vue';
 
 const showButton = ref(false);
 const showAbout = ref(false);
 const showProjects = ref(false);
 const showFooter = ref(false);
+
+
 
 onMounted(() => {
   const scrollY = computed(() => useEffectStore().$state.scrollY);
@@ -19,26 +21,29 @@ onMounted(() => {
   const aboutY = computed(() => useEffectStore().$state.aboutY);
   const projectsY = computed(() => useEffectStore().$state.projectsY);
   const footerY = computed(() => useEffectStore().$state.footerY);
+  console.log(document.querySelector('.home').clientHeight);
 
-  function getPosition() {
-    useEffectStore().setPositionY(
-      document.querySelector('header').clientHeight,
-      document.querySelector('.home').clientHeight,
-      document.querySelector('.about').clientHeight,
-      document.querySelector('.projects').clientHeight,
-      document.querySelector('footer').clientHeight
-    );
+
+  const ratio = .3;
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: ratio
   }
-  getPosition();
-  window.addEventListener('scroll', (e) => {
-    useEffectStore().setScrollY(window.scrollY);
-    scrollY.value + document.documentElement.clientHeight > headerY.value + heroHeaderY.value + aboutY.value ? showButton.value = true : showButton.value = false;
-    scrollY.value + document.documentElement.clientHeight + 100 >= headerY.value + heroHeaderY.value + aboutY.value ? showAbout.value = true : showAbout.value = false;
-    scrollY.value + document.documentElement.clientHeight + 100 >= headerY.value + heroHeaderY.value + aboutY.value + projectsY.value ? showProjects.value = true : showProjects.value = false;
-    scrollY.value + document.documentElement.clientHeight >= headerY.value + heroHeaderY.value + aboutY.value + projectsY.value + footerY.value ? showFooter.value = true : showFooter.value = false;
-  });
-  window.addEventListener('resize', (e) => {
-    getPosition();
+  function handleIntersect(entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.intersectionRatio > ratio) {
+        entry.target.classList.remove('display__hidden');
+        entry.target.classList.add('display__visible');
+      } else {
+        entry.target.classList.remove('display__visible');
+        entry.target.classList.add('display__hidden');
+      }
+    })
+  }
+  const observer = new IntersectionObserver(handleIntersect, options);
+  document.querySelectorAll('section').forEach(function (r) {
+    observer.observe(r);
   })
 });
 
@@ -49,19 +54,34 @@ function scrollToTop() {
   });
 }
 
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > document.querySelector('header').clientHeight + document.querySelector('.home').clientHeight) {
+    console.log('visible');
+    showButton.value = true;
+    document.querySelector('.backtotop').classList.remove('display__hidden');
+    document.querySelector('.backtotop').classList.add('display__visible');
+  } else if (showButton.value == true && window.scrollY < document.querySelector('header').clientHeight + document.querySelector('.home').clientHeight) {
+    console.log('invisible');
+    showButton.value = false;
+    document.querySelector('.backtotop').classList.remove('display__visible');
+    document.querySelector('.backtotop').classList.add('display__hidden');
+  }
+})
+
 </script>
 
 <template>
   <Header />
-  <div @click="scrollToTop" :class="[showButton ? 'backtotop display__visible' : 'backtotop display__hidden']">
+  <div @click="scrollToTop" class="backtotop">
     <fa icon="fa-solid fa-arrow-up" />
   </div>
   <main>
     <HeroHeader />
-    <AboutMe :class="[showAbout ? 'display__visible' : 'display__hidden']" />
-    <Carousel :class="[showProjects ? 'display__visible' : 'display__hidden']" />
+    <AboutMe />
+    <Carousel />
   </main>
-  <Footer :class="[showFooter ? 'display__visible' : 'display__hidden']" />
+  <Footer />
 </template>
 <style lang="scss">
 * {
@@ -76,15 +96,16 @@ function scrollToTop() {
   position: fixed;
   right: 25px;
   bottom: 25px;
-  background-color: rgba(255, 90, 95, 0.8);
+  background-color: #f6767f;
   color: var(--text-color);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2;
+  opacity: 0;
 
   &:hover {
-    background-color: rgba(255, 90, 95, 1);
+    background-color: var(--primary);
     transition: 0.3s all;
   }
 

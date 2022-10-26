@@ -1,8 +1,4 @@
 <script setup>
-import { useEffectStore } from '@/shared/stores/effectStore';
-import { computed } from 'vue';
-
-const currentSlide = computed(() => useEffectStore().$state.currentSlide);
 
 const props = defineProps({
     slide: {
@@ -34,26 +30,16 @@ const props = defineProps({
 
 <style scoped lang="scss">
 .carousel-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 20px 20px 0;
     border-radius: 20px;
 
     &__picture {
-        width: 85%;
+        width: 90%;
         display: flex;
         margin: auto;
+        padding-top: 20px;
     }
 
     &__banner {
-        position: absolute;
-        height: 20%;
-        left: 0;
-        right: 0;
-        bottom: 0;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -98,8 +84,7 @@ const props = defineProps({
             margin: 20px;
 
             a {
-                opacity: 0.8;
-                background: var(--primary);
+                background: var(--primary-light);
                 color: #fff;
                 border: none;
                 border-radius: 5px;
@@ -108,8 +93,8 @@ const props = defineProps({
                 cursor: pointer;
 
                 &:hover {
-                    opacity: 1;
-                    transition: opacity 0.3s ease-in-out;
+                    background: var(--primary);
+                    transition: 0.3s ease-in-out;
                 }
             }
         }
