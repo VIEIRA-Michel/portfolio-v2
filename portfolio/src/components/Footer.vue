@@ -15,9 +15,6 @@
             <div class="footer__container__copyright">
                 <p>© 2022 michelvieira.com</p>
             </div>
-            <div class="footer__container__logo">
-                <a href="">mv<span>.</span></a>
-            </div>
         </div>
     </footer>
 </template>
@@ -42,7 +39,9 @@
             justify-content: space-between;
         }
 
-        &__copyright {}
+        &__copyright {
+            margin-right: 15px;
+        }
 
         &__contact {
             display: flex;
@@ -50,6 +49,7 @@
             align-items: center;
             display: flex;
             justify-content: center;
+            margin-left: 15px;
 
             a {
                 background-color: var(--background--secondary);

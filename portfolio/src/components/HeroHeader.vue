@@ -62,6 +62,8 @@ window.setInterval(function () {
     display: flex;
     justify-content: center;
     color: #fff;
+    position: relative;
+    top: 70px;
     // margin-top: 50px;
     height: 100vh;
 
@@ -109,8 +111,9 @@ window.setInterval(function () {
 
 
                 p {
+                    margin-top: 10px;
                     font-size: 48px;
-                    font-weight: 500;
+                    font-weight: 600;
 
                     @media (max-width: 991px) {
                         font-size: 34px;

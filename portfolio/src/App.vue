@@ -5,7 +5,7 @@ import Carousel from '@/components/Carousel.vue';
 import AboutMe from '@/components/AboutMe.vue';
 import Footer from '@/components/Footer.vue';
 import { useEffectStore } from '@/shared/stores/effectStore';
-import { ref, onMounted, computed, watch } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 
 const showButton = ref(false);
 const showAbout = ref(false);
@@ -21,7 +21,6 @@ onMounted(() => {
   const aboutY = computed(() => useEffectStore().$state.aboutY);
   const projectsY = computed(() => useEffectStore().$state.projectsY);
   const footerY = computed(() => useEffectStore().$state.footerY);
-  console.log(document.querySelector('.home').clientHeight);
 
 
   const ratio = .3;
@@ -69,10 +68,23 @@ window.addEventListener('scroll', () => {
   }
 })
 
+function hiddenButton(e) {
+  if (e) {
+    setTimeout(() => {
+      document.querySelector('.backtotop').style.zIndex = 0;
+    }, 200);
+
+  } else {
+    setTimeout(() => {
+      document.querySelector('.backtotop').style.zIndex = 2;
+    }, 100);
+  }
+}
+
 </script>
 
 <template>
-  <Header />
+  <Header @active-menu="hiddenButton($event)" />
   <div @click="scrollToTop" class="backtotop">
     <fa icon="fa-solid fa-arrow-up" />
   </div>
@@ -118,7 +130,7 @@ window.addEventListener('scroll', () => {
   }
 }
 
-body {
+.app {
   max-width: 1200px;
   background-color: var(--background--primary);
   margin: auto !important;
@@ -128,7 +140,8 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  /* gap: 100px; */
+  margin: 15px;
+  z-index: 0;
 }
 
 .display {

@@ -44,6 +44,8 @@ const props = defineProps({
         flex-direction: row;
         justify-content: space-between;
         background: var(--background--secondary);
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
 
         &__description {
             color: #fff;

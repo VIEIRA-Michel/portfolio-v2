@@ -13,7 +13,6 @@ const newCurrentSlide = computed(() => useEffectStore().$state.newCurrentSlide);
 <template>
     <section class="projects" id="projects">
         <h2><span>•</span>Mes projets</h2>
-        <!-- <div class="carousel-container"> -->
         <div class="carousel">
             <Transition name="fadeRight" mode="out-in">
                 <template v-if="currentSlide === newCurrentSlide">
@@ -22,7 +21,6 @@ const newCurrentSlide = computed(() => useEffectStore().$state.newCurrentSlide);
             </Transition>
             <CarouselControls @previous="useEffectStore().previousSlide" @next="useEffectStore().nextSlide" />
         </div>
-        <!-- </div> -->
     </section>
 </template>
 
@@ -37,11 +35,12 @@ const newCurrentSlide = computed(() => useEffectStore().$state.newCurrentSlide);
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-top: 70px;
 
     .carousel {
         position: relative;
         width: 90%;
-        // overflow: hidden;
+        overflow: hidden;
         border-radius: 20px;
         margin: auto;
         padding: 10px;

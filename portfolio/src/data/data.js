@@ -12,6 +12,8 @@ import vue from '@/assets/icons/icon-vuejs.svg';
 import booki from '@/assets/images/booki.png';
 import ohmyfood from '@/assets/images/ohmyfood.png';
 import hootakes from '@/assets/images/hottakes.png';
+import devdojo from '@/assets/images/devo.png';
+console.log(devdojo);
 
 export const data = [
     {
@@ -89,6 +91,8 @@ export const data = [
         id: 4,
         title: 'Dev-Dojo',
         techno: "Sass, React",
+        background: 'background: rgb(255, 214, 214)',
+        picture: devdojo,
         url: "https://dev-dojo.netlify.app/",
         techno: [
             {

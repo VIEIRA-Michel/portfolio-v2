@@ -4,7 +4,7 @@ import picture from '@/assets/images/mv.jpg';
 </script>
 
 <template>
-    <section class="about">
+    <section class="about" id="about">
         <h2><span>•</span>À propos de moi</h2>
         <div class="about__container">
             <div class="about__container__avatar">
