@@ -64,7 +64,8 @@ window.setInterval(function () {
     color: #fff;
     position: relative;
     top: 70px;
-    // margin-top: 50px;
+    overflow-x: hidden;
+    overflow-y: hidden;
     height: 100vh;
 
     &__container {

@@ -9,6 +9,7 @@ export const useEffectStore = defineStore({
         slides: data,
         currentSlide: 0,
         newCurrentSlide: 0,
+        timer: 0,
     }),
     getters: {
 
@@ -27,6 +28,7 @@ export const useEffectStore = defineStore({
         setCurrentSlide(index) {
             useEffectStore().$patch((state) => {
                 state.currentSlide = index;
+                state.timer = 0;
                 setTimeout(() => {
                     state.newCurrentSlide = index;
                 }, 100)
@@ -44,5 +46,17 @@ export const useEffectStore = defineStore({
                 useEffectStore().setCurrentSlide(index);
             })
         },
+        initSlidesChangeAuto() {
+            useEffectStore().$patch((state) => {
+                setInterval(() => {
+                    if (state.timer >= 0 && state.timer < 5) {
+                        state.timer = state.timer + 1;
+                    } else if (state.timer == 5) {
+                        useEffectStore().nextSlide();
+                        state.timer = 0;
+                    }
+                }, 1000)
+            })
+        }
     }
 });

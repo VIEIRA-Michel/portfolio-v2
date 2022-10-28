@@ -3,7 +3,7 @@ import html from '@/assets/icons/icon-html.svg';
 import javascript from '@/assets/icons/icon-javascript.svg';
 import mongodb from '@/assets/icons/icon-mongodb.svg';
 import mysql from '@/assets/icons/icon-mysql.svg';
-import node from '@/assets/icons/icon-node.svg';
+import node from '@/assets/icons/icon-nodejs.svg';
 import react from '@/assets/icons/icon-react.svg';
 import redis from '@/assets/icons/icon-redis.svg';
 import sass from '@/assets/icons/icon-sass.svg';
@@ -107,43 +107,43 @@ export const data = [
             }
         ]
     },
-    {
-        id: 5,
-        title: 'Groupomania',
-        techno: "Sass, VueJS, NodeJS, MySQL, Redis, Socket.io",
-        url: "https://github.com/VIEIRA-Michel/projet-7-oc",
-        techno: [
-            {
-                id: 1,
-                name: "Sass",
-                picture: sass,
-            },
-            {
-                id: 2,
-                name: "VueJS",
-                picture: vue,
-            },
-            {
-                id: 3,
-                name: "NodeJS",
-                picture: node,
-            },
-            {
-                id: 4,
-                name: "MySQL",
-                picture: mysql,
-            },
-            {
-                id: 5,
-                name: "Redis",
-                picture: redis,
-            },
-            {
-                id: 6,
-                name: "Socket.io",
-                picture: socketio,
-                style: 'padding-left: 7px'
-            }
-        ]
-    }
+    // {
+    //     id: 5,
+    //     title: 'Groupomania',
+    //     techno: "Sass, VueJS, NodeJS, MySQL, Redis, Socket.io",
+    //     url: "https://github.com/VIEIRA-Michel/projet-7-oc",
+    //     techno: [
+    //         {
+    //             id: 1,
+    //             name: "Sass",
+    //             picture: sass,
+    //         },
+    //         {
+    //             id: 2,
+    //             name: "VueJS",
+    //             picture: vue,
+    //         },
+    //         {
+    //             id: 3,
+    //             name: "NodeJS",
+    //             picture: node,
+    //         },
+    //         {
+    //             id: 4,
+    //             name: "MySQL",
+    //             picture: mysql,
+    //         },
+    //         {
+    //             id: 5,
+    //             name: "Redis",
+    //             picture: redis,
+    //         },
+    //         {
+    //             id: 6,
+    //             name: "Socket.io",
+    //             picture: socketio,
+    //             style: 'padding-left: 7px'
+    //         }
+    //     ]
+    // }
 ]

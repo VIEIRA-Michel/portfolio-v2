@@ -1,27 +1,27 @@
 <script setup>
 import CarouselItem from '@/components/CarouselItem.vue';
-import CarouselControls from '@/components/CarouselControls.vue';
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import { useEffectStore } from '@/shared/stores/effectStore';
 
 const slides = computed(() => useEffectStore().$state.slides);
 const currentSlide = computed(() => useEffectStore().$state.currentSlide);
 const newCurrentSlide = computed(() => useEffectStore().$state.newCurrentSlide);
 
+
+onMounted(() => useEffectStore().initSlidesChangeAuto());
 </script>
 
 <template>
-    <section class="projects" id="projects">
-        <h2><span>•</span>Mes projets</h2>
-        <div class="carousel">
-            <Transition name="fadeRight" mode="out-in">
-                <template v-if="currentSlide === newCurrentSlide">
-                    <CarouselItem :slide="slides[currentSlide]" />
-                </template>
-            </Transition>
-            <CarouselControls @previous="useEffectStore().previousSlide" @next="useEffectStore().nextSlide" />
+    <div class="projects" id="projects">
+        <h2>Mes projets</h2>
+        <div class="slides">
+            <span v-for="(slide, index) in slides" @click="useEffectStore().setCurrentSlide(index)"
+                :class="[index === currentSlide ? 'active' : '']">•</span>
         </div>
-    </section>
+        <div class="carousel">
+            <CarouselItem v-for="(slide, index) in slides" :slide="slide" :key="index" v-show="currentSlide == index" />
+        </div>
+    </div>
 </template>
 
 <style scoped lang="scss">
@@ -36,6 +36,23 @@ const newCurrentSlide = computed(() => useEffectStore().$state.newCurrentSlide);
     justify-content: center;
     flex-direction: column;
     margin-top: 70px;
+    margin-bottom: 20px;
+
+    .slides {
+        display: flex;
+        justify-content: center;
+
+        span {
+            font-size: 30px;
+            margin: 0 5px;
+            cursor: pointer;
+            color: #717171;
+
+            &.active {
+                color: var(--primary);
+            }
+        }
+    }
 
     .carousel {
         position: relative;
@@ -45,34 +62,21 @@ const newCurrentSlide = computed(() => useEffectStore().$state.newCurrentSlide);
         margin: auto;
         padding: 10px;
     }
+}
 
-    h2 {
-        font-size: 24px;
-        font-weight: 600;
-        text-align: center;
-        margin-bottom: 40px;
-        color: var(--text-color);
-        color: #ffffff !important;
-        -webkit-animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.6s both;
-        animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.6s both;
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-color);
+    color: #ffffff !important;
+    -webkit-animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.6s both;
+    animation: appear-the-text 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.6s both;
 
-        span {
-            color: var(--primary);
-            margin-right: 5px;
-        }
+    span {
+        color: var(--primary);
+        margin-right: 5px;
     }
-}
-
-.fadeRight-leave-to {
-    opacity: 0;
-}
-
-.fadeRight-enter-active,
-.fadeRight-leave-active {
-    transition: all 0.4s;
-}
-
-.fadeRight-enter-from {
-    opacity: 0;
 }
 </style>

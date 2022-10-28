@@ -5,7 +5,7 @@ import picture from '@/assets/images/mv.jpg';
 
 <template>
     <section class="about" id="about">
-        <h2><span>•</span>À propos de moi</h2>
+        <h2>À propos de moi</h2>
         <div class="about__container">
             <div class="about__container__avatar">
                 <img :src="picture" alt="Photo de Michel Vieira">

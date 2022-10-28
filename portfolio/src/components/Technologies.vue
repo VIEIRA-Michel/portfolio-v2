@@ -4,7 +4,7 @@ import html from '@/assets/icons/icon-html.svg';
 import js from '@/assets/icons/icon-javascript.svg';
 import mongo from '@/assets/icons/icon-mongodb.svg';
 import mysql from '@/assets/icons/icon-mysql.svg';
-import node from '@/assets/icons/icon-node.svg';
+import node from '@/assets/icons/icon-nodejs.svg';
 import react from '@/assets/icons/icon-react.svg';
 import redis from '@/assets/icons/icon-redis.svg';
 import sass from '@/assets/icons/icon-sass.svg';
@@ -95,6 +95,7 @@ column4.push(redis, soket);
             overflow: hidden;
             padding: 10px;
             width: 50px;
+            height: 50px;
             color: var(--primary);
             background-color: var(--background--secondary);
             margin: 15px 0;
@@ -102,6 +103,7 @@ column4.push(redis, soket);
 
             img {
                 height: 50px;
+                width: 50px;
                 background-size: cover;
                 filter: invert(100%) sepia(1%) saturate(6446%) hue-rotate(180deg) brightness(92%) contrast(104%);
             }

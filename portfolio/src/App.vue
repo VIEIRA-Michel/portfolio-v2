@@ -96,6 +96,11 @@ function hiddenButton(e) {
   <Footer />
 </template>
 <style lang="scss">
+
+html {
+  overflow-x: hidden;
+}
+
 * {
   scroll-behavior: smooth;
 }
@@ -115,6 +120,7 @@ function hiddenButton(e) {
   align-items: center;
   z-index: 2;
   opacity: 0;
+  box-shadow: var(--box-shadow-nav);
 
   &:hover {
     background-color: var(--primary);
@@ -140,7 +146,8 @@ function hiddenButton(e) {
 main {
   display: flex;
   flex-direction: column;
-  margin: 15px;
+  max-width: 1200px;
+  margin: auto;
   z-index: 0;
 }
 

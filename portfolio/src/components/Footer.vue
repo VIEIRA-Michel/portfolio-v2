@@ -25,19 +25,16 @@
 }
 
 .footer {
+
     &__container {
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
         align-items: center;
         height: 100px;
         padding-top: 40px;
         padding-bottom: 40px;
         border-top: 2px solid var(--background--secondary);
-
-        @media (max-width: 991px) {
-            flex-direction: column;
-            justify-content: space-between;
-        }
 
         &__copyright {
             margin-right: 15px;
