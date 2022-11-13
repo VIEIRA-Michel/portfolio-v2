@@ -12,16 +12,18 @@ onMounted(() => useEffectStore().initSlidesChangeAuto());
 </script>
 
 <template>
-    <div class="projects" id="projects">
-        <h2>Mes projets</h2>
-        <div class="slides">
-            <span v-for="(slide, index) in slides" @click="useEffectStore().setCurrentSlide(index)"
-                :class="[index === currentSlide ? 'active' : '']">•</span>
+    <section class="carousel" id="projects">
+        <div class="projects">
+            <h2>Mes projets</h2>
+            <div class="slides">
+                <span v-for="(slide, index) in slides" @click="useEffectStore().setCurrentSlide(index)"
+                    :class="[index === currentSlide ? 'active' : '']">•</span>
+            </div>
+            <div class="carousel">
+                <CarouselItem v-for="(slide, index) in slides" :slide="slide" :key="index" v-show="currentSlide == index" />
+            </div>
         </div>
-        <div class="carousel">
-            <CarouselItem v-for="(slide, index) in slides" :slide="slide" :key="index" v-show="currentSlide == index" />
-        </div>
-    </div>
+    </section>
 </template>
 
 <style scoped lang="scss">

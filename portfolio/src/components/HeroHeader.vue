@@ -69,13 +69,13 @@ window.setInterval(function () {
     height: 100vh;
 
     &__container {
-        width: 100%;
+        width: 91.7%;
         display: flex;
         flex-wrap: wrap;
-        height: inherit;
+        // height: inherit;
         flex-direction: row;
         justify-content: space-between;
-        margin: auto;
+        // margin: auto;
         position: relative;
 
         &__infos {

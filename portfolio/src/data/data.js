@@ -12,8 +12,8 @@ import vue from '@/assets/icons/icon-vuejs.svg';
 import booki from '@/assets/images/booki.png';
 import ohmyfood from '@/assets/images/ohmyfood.png';
 import hootakes from '@/assets/images/hottakes.png';
-import devdojo from '@/assets/images/devo.png';
-console.log(devdojo);
+import devdojo from '@/assets/images/devdojo.png';
+import groupomania from '@/assets/images/groupomania.png';
 
 export const data = [
     {
@@ -91,7 +91,7 @@ export const data = [
         id: 4,
         title: 'Dev-Dojo',
         techno: "Sass, React",
-        background: 'background: rgb(255, 214, 214)',
+        background: 'background: rgb(220 214 255)',
         picture: devdojo,
         url: "https://dev-dojo.netlify.app/",
         techno: [
@@ -107,43 +107,45 @@ export const data = [
             }
         ]
     },
-    // {
-    //     id: 5,
-    //     title: 'Groupomania',
-    //     techno: "Sass, VueJS, NodeJS, MySQL, Redis, Socket.io",
-    //     url: "https://github.com/VIEIRA-Michel/projet-7-oc",
-    //     techno: [
-    //         {
-    //             id: 1,
-    //             name: "Sass",
-    //             picture: sass,
-    //         },
-    //         {
-    //             id: 2,
-    //             name: "VueJS",
-    //             picture: vue,
-    //         },
-    //         {
-    //             id: 3,
-    //             name: "NodeJS",
-    //             picture: node,
-    //         },
-    //         {
-    //             id: 4,
-    //             name: "MySQL",
-    //             picture: mysql,
-    //         },
-    //         {
-    //             id: 5,
-    //             name: "Redis",
-    //             picture: redis,
-    //         },
-    //         {
-    //             id: 6,
-    //             name: "Socket.io",
-    //             picture: socketio,
-    //             style: 'padding-left: 7px'
-    //         }
-    //     ]
-    // }
+    {
+        id: 5,
+        title: 'Groupomania',
+        techno: "Sass, VueJS, NodeJS, MySQL, Redis, Socket.io",
+        background: 'background-color: #fed7d7',
+        picture: groupomania,
+        url: "https://github.com/VIEIRA-Michel/projet-7-oc",
+        techno: [
+            {
+                id: 1,
+                name: "Sass",
+                picture: sass,
+            },
+            {
+                id: 2,
+                name: "VueJS",
+                picture: vue,
+            },
+            {
+                id: 3,
+                name: "NodeJS",
+                picture: node,
+            },
+            {
+                id: 4,
+                name: "MySQL",
+                picture: mysql,
+            },
+            {
+                id: 5,
+                name: "Redis",
+                picture: redis,
+            },
+            {
+                id: 6,
+                name: "Socket.io",
+                picture: socketio,
+                style: 'padding-left: 7px'
+            }
+        ]
+    }
 ]

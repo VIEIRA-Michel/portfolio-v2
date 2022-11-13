@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import mv from '../../public/mv-final.svg';
+import mv from '../assets/icons/mv-final.svg';
 const displayMenu = ref(null);
 
 const emit = defineEmits(['active-menu'])
@@ -27,15 +27,15 @@ function unrollMenu() {
                     :class="[displayMenu ? 'header__container__top__navbar active' : displayMenu == false ? 'header__container__top__navbar hidden' : 'header__container__top__navbar']">
                     <ul class="header__container__top__navbar__list">
                         <li class="header__container__top__navbar__list__item item-1">
-                            <a href="#about">À propos</a>
+                            <a @click="displayMenu = false" href="#about">À propos</a>
                         </li>
                         <li class="header__container__top__navbar__list__item item-2">
-                            <a href="#projects">
+                            <a @click="displayMenu = false" href="#projects">
                                 Projets
                             </a>
                         </li>
                         <li class="header__container__top__navbar__list__item item-3">
-                            <a href="#contact">
+                            <a @click="displayMenu = false" href="#contact">
                                 Contact
                             </a>
                         </li>

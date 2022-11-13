@@ -42,6 +42,7 @@ onMounted(() => {
   }
   const observer = new IntersectionObserver(handleIntersect, options);
   document.querySelectorAll('section').forEach(function (r) {
+    console.log(r);
     observer.observe(r);
   })
 });

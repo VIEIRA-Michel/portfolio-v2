@@ -39,6 +39,7 @@ console.log(props);
 <style scoped lang="scss">
 .carousel-item {
     border-radius: 20px;
+    padding-top: 20px;
 
     &__picture {
         width: 90%;
@@ -46,7 +47,8 @@ console.log(props);
         max-height: auto;
         display: flex;
         margin: auto;
-        padding-top: 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
         -webkit-animation: appear 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
         animation: appear 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
