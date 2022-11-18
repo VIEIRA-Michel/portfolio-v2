@@ -1,9 +1,4 @@
 <script setup>
-import { computed } from 'vue';
-import { useEffectStore } from '@/shared/stores/effectStore';
-const slides = computed(() => useEffectStore().$state.slides);
-const currentSlide = computed(() => useEffectStore().$state.currentSlide);
-const newCurrentSlide = computed(() => useEffectStore().$state.newCurrentSlide);
 
 const props = defineProps({
     slide: {
@@ -11,7 +6,6 @@ const props = defineProps({
         required: true,
     },
 });
-console.log(props);
 </script>
 
 <template>
@@ -87,16 +81,37 @@ console.log(props);
                         $iteration-amount: 200ms * $i;
 
                         &.techno-#{$i} {
-                            width: 30px;
-                            height: 30px;
-                            margin-right: 5px;
                             -webkit-animation: slide-in-blurred-right 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
                             animation: slide-in-blurred-right 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
                             animation-delay: $iteration-amount;
 
-                            img {
-                                height: 30px;
+                            @media (max-width: 430px) {
+                                width: 15px;
+                                height: 15px;
+                                margin-right: 10px;
+                                margin-bottom: 10px;
+                            }
+
+                            @media (min-width: 431px) {
                                 width: 30px;
+                                height: 30px;
+                                margin-right: 5px;
+                                margin-bottom: 5px;
+                            }
+
+
+                            img {
+
+                                @media (max-width: 430px) {
+                                    width: 20px;
+                                    height: 20px;
+                                }
+
+                                @media (min-width: 431px) {
+                                    width: 30px;
+                                    height: 30px;
+                                }
+
                                 background-size: cover;
                                 filter: invert(100%) sepia(1%) saturate(6446%) hue-rotate(180deg) brightness(92%) contrast(104%);
                             }
@@ -131,21 +146,5 @@ console.log(props);
             }
         }
     }
-}
-
-.fadeRight-leave-to {
-    // opacity: 0;
-    // transform: translateX(20px);
-}
-
-.fadeRight-enter-active,
-.fadeRight-leave-active {}
-
-.fadeRight-enter-from {
-    // opacity: 0;
-    // opacity: 0;
-    // transform: translateX(20px);
-    // -webkit-animation: entrance 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    // animation: entrance 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 </style>

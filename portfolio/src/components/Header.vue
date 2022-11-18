@@ -15,6 +15,10 @@ function unrollMenu() {
     }
 }
 
+function toggleDisplay() {
+    displayMenu.value = false;
+    emit('active-menu', displayMenu.value);
+}
 </script>
 
 <template>
@@ -27,15 +31,15 @@ function unrollMenu() {
                     :class="[displayMenu ? 'header__container__top__navbar active' : displayMenu == false ? 'header__container__top__navbar hidden' : 'header__container__top__navbar']">
                     <ul class="header__container__top__navbar__list">
                         <li class="header__container__top__navbar__list__item item-1">
-                            <a @click="displayMenu = false" href="#about">À propos</a>
+                            <a @click="toggleDisplay" href="#about">À propos</a>
                         </li>
                         <li class="header__container__top__navbar__list__item item-2">
-                            <a @click="displayMenu = false" href="#projects">
+                            <a @click="toggleDisplay" href="#projects">
                                 Projets
                             </a>
                         </li>
                         <li class="header__container__top__navbar__list__item item-3">
-                            <a @click="displayMenu = false" href="#contact">
+                            <a @click="toggleDisplay" href="#contact">
                                 Contact
                             </a>
                         </li>
@@ -94,7 +98,6 @@ function unrollMenu() {
             flex-direction: row;
             align-items: flex-start;
             padding-top: 8px;
-            // height: 70px;
             width: 100%;
             justify-content: space-between;
             transition: height .3s ease-in-out;

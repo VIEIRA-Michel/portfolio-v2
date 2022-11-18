@@ -19,25 +19,35 @@ import picture from '@/assets/images/mv.jpg';
                         proposé par O'clock en auto-financement.
                     </p>
                     <p>
-                        Ma première formation ne m'a pas apporté entière satisfaction car le format des cours étaient
-                        loin d'être adapté pour une parfaite assimilation des connaissances.
-                        Ayant le désir d'en apprendre d'avantages et de consolider les notions que j'avais acquises j'ai
-                        recherché par la suite une formation plus complète, tout en changeant de
-                        méthodologie en apprenant cette fois ci en autodidacte.
+                        Ma première formation ne m'a pas apporté entière satisfaction, car le format des cours rendait
+                        difficile le fait de tout mémoriser.
+
+                        J'en suis ressorti avec beaucoup de lacune et un syndrome de l'imposteur en prime mais j'ai
+                        décidé que je ne baisserais pas les bras pour autant.
+
+                        Ayant le désir d'en apprendre d'avantages et de consolider les quelques connaissances que
+                        j'avais acquises j'ai cherché par la suite à me former de manière autonome.
                     </p>
                     <p>
-                        J'ai donc commencé à suivre les cours d'Openclassrooms et j'ai décidé par la même occasion de
-                        faire leur formation de développeur web pour pouvoir obtenir un titre professionnel à la fin.
-                        En parallèle je me servais également de Dyma pour apprendre des choses qui n'étaient pas
-                        présentes dans les cours cela m'a permis d'apprendre le framework VueJS avec lequel ce portfolio
-                        est conçu.
-                        Grâce à ses deux plateformes j'ai pris plaisir à apprendre et mes doutes se sont dissipés.
+                        J'ai donc commencé à suivre les cours d'Openclassrooms et j'ai par la suite entamer les
+                        démarches pour intégrer leur parcours de développeur web et cette fois-ci tenté d'obtenir un
+                        titre professionnel à la fin.
+
+                        O'clock m'a permis d'apprendre ce qu'était le code, mais Openclassrooms m'a permis d'apprendre
+                        qui j'étais et de me montrer que tout ce qui me paraissait impossible, en réalité ne l'était
+                        pas.
+
+                        Grâce à leur méthodologie j'ai pris beaucoup de plaisir à apprendre et mes doutes se sont
+                        dissipés.
                     </p>
                     <p>
-                        Aujourd'hui je sais que le chemin menant à la réussite est encore long, mais j'ai appris à aimer
-                        le processus plutôt que la récompense.
-                        Le code est devenu pour moi un moyen de m'exprimer, un moyen de faire parler mon art,
-                        et d'insuffler la vie à mes idées.
+                        Aujourd'hui je suis conscient que je ne connais pas tout, mais je sais aussi que je peux tout
+                        apprendre et même si le chemin menant à la réussite est encore long, cette expérience m'aura
+                        permis d'apprendre à aimer
+                        autant le processus que la récompense.
+                    </p>
+                    <p>
+                        Le code est devenu pour moi un moyen de m'exprimer et d'insuffler la vie à mes idées.
                     </p>
                 </div>
             </div>
@@ -52,6 +62,11 @@ import picture from '@/assets/images/mv.jpg';
 }
 
 .about {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     h2 {
         font-size: 24px;
         font-weight: 600;

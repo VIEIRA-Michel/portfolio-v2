@@ -1,28 +1,14 @@
 <script setup>
+import { ref, onMounted } from 'vue';
 import Header from '@/components/Header.vue';
 import HeroHeader from '@/components/HeroHeader.vue';
-import Carousel from '@/components/Carousel.vue';
 import AboutMe from '@/components/AboutMe.vue';
+import Carousel from '@/components/Carousel.vue';
 import Footer from '@/components/Footer.vue';
-import { useEffectStore } from '@/shared/stores/effectStore';
-import { ref, onMounted, computed } from 'vue';
 
 const showButton = ref(false);
-const showAbout = ref(false);
-const showProjects = ref(false);
-const showFooter = ref(false);
-
-
 
 onMounted(() => {
-  const scrollY = computed(() => useEffectStore().$state.scrollY);
-  const headerY = computed(() => useEffectStore().$state.headerY);
-  const heroHeaderY = computed(() => useEffectStore().$state.heroHeaderY);
-  const aboutY = computed(() => useEffectStore().$state.aboutY);
-  const projectsY = computed(() => useEffectStore().$state.projectsY);
-  const footerY = computed(() => useEffectStore().$state.footerY);
-
-
   const ratio = .3;
   const options = {
     root: null,
@@ -81,7 +67,6 @@ function hiddenButton(e) {
     }, 100);
   }
 }
-
 </script>
 
 <template>
@@ -97,7 +82,6 @@ function hiddenButton(e) {
   <Footer />
 </template>
 <style lang="scss">
-
 html {
   overflow-x: hidden;
 }

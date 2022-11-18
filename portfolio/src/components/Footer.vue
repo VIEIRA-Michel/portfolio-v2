@@ -2,7 +2,7 @@
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__container__contact" id="contact">
-                <a href="mailto:michelvieira.pro@gmail.com">
+                <a href="mailto:contact@michelvieira.fr">
                     <fa icon="fa-solid fa-envelope" />
                 </a>
                 <a href="https://www.linkedin.com/in/michelvieira23/">

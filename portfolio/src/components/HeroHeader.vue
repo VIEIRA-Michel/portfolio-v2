@@ -26,7 +26,7 @@ window.setInterval(function () {
                     </p>
                 </div>
                 <div class="home__container__infos__buttons">
-                    <a href="mailto:michelvieira.pro@gmail.com" class="btn btn-primary">
+                    <a href="mailto:contact@michelvieira.fr" class="btn btn-primary">
                         Me contacter
                     </a>
                     <a href="#projects" class="btn btn-secondary">
@@ -72,10 +72,8 @@ window.setInterval(function () {
         width: 91.7%;
         display: flex;
         flex-wrap: wrap;
-        // height: inherit;
         flex-direction: row;
         justify-content: space-between;
-        // margin: auto;
         position: relative;
 
         &__infos {
@@ -194,7 +192,6 @@ window.setInterval(function () {
             display: flex;
             justify-content: center;
             width: 100%;
-            // align-items: center;
             -webkit-animation: appear-mouse 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;
             animation: appear-mouse 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;
 

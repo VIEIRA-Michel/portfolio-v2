@@ -1,18 +1,16 @@
 <script setup>
-import CarouselItem from '@/components/CarouselItem.vue';
 import { computed, onMounted } from 'vue';
 import { useEffectStore } from '@/shared/stores/effectStore';
+import CarouselItem from '@/components/CarouselItem.vue';
 
 const slides = computed(() => useEffectStore().$state.slides);
 const currentSlide = computed(() => useEffectStore().$state.currentSlide);
-const newCurrentSlide = computed(() => useEffectStore().$state.newCurrentSlide);
-
 
 onMounted(() => useEffectStore().initSlidesChangeAuto());
 </script>
 
 <template>
-    <section class="carousel" id="projects">
+    <section class="carousel-projects" id="projects">
         <div class="projects">
             <h2>Mes projets</h2>
             <div class="slides">
@@ -20,7 +18,8 @@ onMounted(() => useEffectStore().initSlidesChangeAuto());
                     :class="[index === currentSlide ? 'active' : '']">•</span>
             </div>
             <div class="carousel">
-                <CarouselItem v-for="(slide, index) in slides" :slide="slide" :key="index" v-show="currentSlide == index" />
+                <CarouselItem v-for="(slide, index) in slides" :slide="slide" :key="index"
+                    v-show="currentSlide == index" />
             </div>
         </div>
     </section>
@@ -31,6 +30,14 @@ onMounted(() => useEffectStore().initSlidesChangeAuto());
 
 * {
     font-family: 'Poppins', sans-serif;
+}
+
+.carousel-projects {
+    // margin-bottom: 50px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .projects {
