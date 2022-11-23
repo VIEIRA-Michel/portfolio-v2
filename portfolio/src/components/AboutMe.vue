@@ -22,10 +22,10 @@ import picture from '@/assets/images/mv.jpg';
                         Ma première formation ne m'a pas apporté entière satisfaction, car le format des cours rendait
                         difficile le fait de tout mémoriser.
 
-                        J'en suis ressorti avec beaucoup de lacune et un syndrome de l'imposteur en prime mais j'ai
+                        J'en suis ressorti avec beaucoup de lacunes et un syndrome de l'imposteur en prime mais j'ai
                         décidé que je ne baisserais pas les bras pour autant.
 
-                        Ayant le désir d'en apprendre d'avantages et de consolider les quelques connaissances que
+                        Ayant le désir d'en apprendre d'avantage et de consolider les quelques connaissances que
                         j'avais acquises j'ai cherché par la suite à me former de manière autonome.
                     </p>
                     <p>
@@ -66,6 +66,10 @@ import picture from '@/assets/images/mv.jpg';
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media (max-width: 500px) {
+        height: initial;
+    }
 
     h2 {
         font-size: 24px;
