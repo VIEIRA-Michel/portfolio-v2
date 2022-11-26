@@ -13,41 +13,21 @@ import picture from '@/assets/images/mv.jpg';
             <div class="about__container__details">
                 <div class="about__container__details__paragraph">
                     <p>
-                        En 2020, suite à la pandémie je prends conscience de la réalité, il était temps pour moi d'agir
-                        et de me former à un métier qui correspondrait à mes attentes.
-                        Je décide donc de quitter mon emploi et de me tourner vers une formation de développeur web
-                        proposé par O'clock en auto-financement.
+                        Fasciné par l'univers du web je décide en 2022 de me lancer dans une formation de Développeur
+                        web chez OpenClassrooms pour tenter d'en faire mon métier.
                     </p>
                     <p>
-                        Ma première formation ne m'a pas apporté entière satisfaction, car le format des cours rendait
-                        difficile le fait de tout mémoriser.
-
-                        J'en suis ressorti avec beaucoup de lacunes et un syndrome de l'imposteur en prime mais j'ai
-                        décidé que je ne baisserais pas les bras pour autant.
-
-                        Ayant le désir d'en apprendre d'avantage et de consolider les quelques connaissances que
-                        j'avais acquises j'ai cherché par la suite à me former de manière autonome.
+                        Cette formation m'a permis de me surpasser, ce fut une expérience enrichissante et j'en suis
+                        ressortie avec une grande soif de nouvelles connaissances.
                     </p>
                     <p>
-                        J'ai donc commencé à suivre les cours d'Openclassrooms et j'ai par la suite entamer les
-                        démarches pour intégrer leur parcours de développeur web et cette fois-ci tenté d'obtenir un
-                        titre professionnel à la fin.
-
-                        O'clock m'a permis d'apprendre ce qu'était le code, mais Openclassrooms m'a permis d'apprendre
-                        qui j'étais et de me montrer que tout ce qui me paraissait impossible, en réalité ne l'était
-                        pas.
-
-                        Grâce à leur méthodologie j'ai pris beaucoup de plaisir à apprendre et mes doutes se sont
-                        dissipés.
+                        Désireux d'en apprendre toujours plus je poursuis actuellement mon apprentissage sur une
+                        plateforme de cours en ligne du nom de Dyma me permettant ainsi de continuer ma montée en
+                        compétence et d'apprendre d'autres langages et frameworks.
                     </p>
                     <p>
-                        Aujourd'hui je suis conscient que je ne connais pas tout, mais je sais aussi que je peux tout
-                        apprendre et même si le chemin menant à la réussite est encore long, cette expérience m'aura
-                        permis d'apprendre à aimer
-                        autant le processus que la récompense.
-                    </p>
-                    <p>
-                        Le code est devenu pour moi un moyen de m'exprimer et d'insuffler la vie à mes idées.
+                        Le code est devenu pour moi bien plus que ce qu'il était à la base, il est à présent un moyen de
+                        m'exprimer et d'insuffler la vie à mes idées.
                     </p>
                 </div>
             </div>
@@ -148,7 +128,6 @@ import picture from '@/assets/images/mv.jpg';
                 height: 100x;
                 object-fit: cover;
                 border-radius: 50%;
-                border: 2px solid #f3f3f3;
             }
         }
     }
