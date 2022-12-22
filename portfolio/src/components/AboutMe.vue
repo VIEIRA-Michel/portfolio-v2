@@ -42,7 +42,7 @@ import picture from '@/assets/images/mv.jpg';
 }
 
 .about {
-    height: 100vh;
+    // height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
