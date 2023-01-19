@@ -17,13 +17,9 @@ import picture from '@/assets/images/mv.jpg';
                         web chez OpenClassrooms pour tenter d'en faire mon métier.
                     </p>
                     <p>
-                        Cette formation m'a permis de me surpasser, ce fut une expérience enrichissante et j'en suis
-                        ressortie avec une grande soif de nouvelles connaissances.
-                    </p>
-                    <p>
-                        Désireux d'en apprendre toujours plus je poursuis actuellement mon apprentissage sur une
-                        plateforme de cours en ligne du nom de Dyma me permettant ainsi de continuer ma montée en
-                        compétence et d'apprendre d'autres langages et frameworks.
+                        Désireux d'en apprendre toujours plus je continue d'apprendre en autodidacte afin de poursuivre
+                        ma montée en compétences tout en réalisant des projets en parallèle afin de parfaire ma
+                        technique et mettre en pratique les nouvelles choses que j'aurais apprises.
                     </p>
                     <p>
                         Le code est devenu pour moi bien plus que ce qu'il était à la base, il est à présent un moyen de
@@ -42,7 +38,6 @@ import picture from '@/assets/images/mv.jpg';
 }
 
 .about {
-    // height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

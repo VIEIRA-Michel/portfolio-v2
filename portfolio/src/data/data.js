@@ -16,6 +16,7 @@ import ohmyfood from '@/assets/images/ohmyfood.png';
 import groupomania from '@/assets/images/groupomania.png';
 import supakanban from '@/assets/images/supakanban.png';
 import tictactoe from '@/assets/images/tic-tac-toe.png';
+import spaceTourism from '@/assets/images/space-tourism.png';
 
 export const data = [
     {
@@ -177,6 +178,26 @@ export const data = [
         background: 'background-color: #f7e6cf',
         picture: tictactoe,
         url: "https://tictactoe.michelvieira.fr",
+        techno: [
+            {
+                id: 1,
+                name: "React",
+                picture: react,
+            },
+            {
+                id: 2,
+                name: "Sass",
+                picture: sass,
+            },
+        ]
+    },
+    {
+        id: 5,
+        title: "space-tourism",
+        techno: "React, Sass",
+        background: 'background-color: #D1F7CF',
+        picture: spaceTourism,
+        url: "https://space-tourism.michelvieira.fr",
         techno: [
             {
                 id: 1,

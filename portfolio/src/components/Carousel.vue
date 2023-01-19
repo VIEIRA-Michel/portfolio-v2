@@ -33,7 +33,6 @@ onMounted(() => useEffectStore().initSlidesChangeAuto());
 }
 
 .carousel-projects {
-    // margin-bottom: 50px;
     height: 100vh;
     display: flex;
     flex-direction: column;
