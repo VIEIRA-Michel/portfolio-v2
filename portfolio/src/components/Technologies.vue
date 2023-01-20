@@ -10,13 +10,14 @@ import redis from '@/assets/icons/icon-redis.svg';
 import sass from '@/assets/icons/icon-sass.svg';
 import soket from '@/assets/icons/icon-socketio.svg';
 import vue from '@/assets/icons/icon-vuejs.svg';
+import tailwind from '@/assets/icons/icon-tailwind.svg';
 
 
 const column1 = [], column2 = [], column3 = [], column4 = [];
 column1.push(html, css, sass);
 column2.push(js, react, vue);
 column3.push(node, mongo, mysql)
-column4.push(redis, soket);
+column4.push(redis, soket, tailwind);
 
 </script>
 

@@ -9,6 +9,7 @@ import redis from '@/assets/icons/icon-redis.svg';
 import sass from '@/assets/icons/icon-sass.svg';
 import socketio from '@/assets/icons/icon-socketio.svg';
 import vue from '@/assets/icons/icon-vuejs.svg';
+import tailwind from '@/assets/icons/icon-tailwind.svg';
 import booki from '@/assets/images/booki.png';
 import ohmyfood from '@/assets/images/ohmyfood.png';
 // import hootakes from '@/assets/images/hottakes.png';
@@ -25,7 +26,7 @@ export const data = [
         techno: "HTML, CSS",
         picture: booki,
         background: 'background: rgb(214, 230, 255)',
-        url: "https://vieira-michel.github.io/projet-2-oc/",
+        url: "https://vieira-michel.github.io/Booki/",
         techno: [
             {
                 id: 1,
@@ -45,7 +46,7 @@ export const data = [
         techno: "HTML, CSS, Javascript",
         picture: ohmyfood,
         background: 'background: rgb(255, 214, 244)',
-        url: "https://vieira-michel.github.io/projet-3-oc/",
+        url: "https://vieira-michel.github.io/Ohmyfood/",
         techno: [
             {
                 id: 1,
@@ -197,7 +198,7 @@ export const data = [
         techno: "React, Sass",
         background: 'background-color: #D1F7CF',
         picture: spaceTourism,
-        url: "https://space-tourism.michelvieira.fr",
+        url: "https://spacetourism.michelvieira.fr",
         techno: [
             {
                 id: 1,
@@ -206,8 +207,8 @@ export const data = [
             },
             {
                 id: 2,
-                name: "Sass",
-                picture: sass,
+                name: "TailwindCSS",
+                picture: tailwind,
             },
         ]
     }
