@@ -17,9 +17,8 @@ import picture from '@/assets/images/mv.jpg';
                         web chez OpenClassrooms pour tenter d'en faire mon métier.
                     </p>
                     <p>
-                        Désireux d'en apprendre toujours plus je continue d'apprendre en autodidacte afin de poursuivre
-                        ma montée en compétences tout en réalisant des projets en parallèle afin de parfaire ma
-                        technique et mettre en pratique les nouvelles choses que j'aurais apprises.
+                        Désireux d'en apprendre toujours plus je continue d'apprendre en autodidacte tout en réalisant
+                        des projets en parallèle afin de parfaire ma technique et mettre en pratique ce que j'apprends.
                     </p>
                     <p>
                         Le code est devenu pour moi bien plus que ce qu'il était à la base, il est à présent un moyen de
@@ -41,9 +40,15 @@ import picture from '@/assets/images/mv.jpg';
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100vh;
 
     @media (max-width: 500px) {
         height: initial;
+    }
+
+    @media (min-width: 1024px) {
+        width: 52%;
+        margin: auto;
     }
 
     h2 {

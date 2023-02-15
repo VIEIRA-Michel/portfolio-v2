@@ -49,9 +49,9 @@ export const useEffectStore = defineStore({
         initSlidesChangeAuto() {
             useEffectStore().$patch((state) => {
                 setInterval(() => {
-                    if (state.timer >= 0 && state.timer < 5) {
+                    if (state.timer >= 0 && state.timer < 3) {
                         state.timer = state.timer + 1;
-                    } else if (state.timer == 5) {
+                    } else if (state.timer == 3) {
                         useEffectStore().nextSlide();
                         state.timer = 0;
                     }

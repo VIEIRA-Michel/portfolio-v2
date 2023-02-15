@@ -14,8 +14,14 @@ onMounted(() => useEffectStore().initSlidesChangeAuto());
         <div class="projects">
             <h2>Mes projets</h2>
             <div class="slides">
+                <div class="arrow" @click="useEffectStore().previousSlide()">
+                    <fa icon="fa-solid fa-arrow-left" />
+                </div>
                 <span v-for="(slide, index) in slides" @click="useEffectStore().setCurrentSlide(index)"
                     :class="[index === currentSlide ? 'active' : '']">•</span>
+                <div class="arrow" @click="useEffectStore().nextSlide()">
+                    <fa icon="fa-solid fa-arrow-right" />
+                </div>
             </div>
             <div class="carousel">
                 <CarouselItem v-for="(slide, index) in slides" :slide="slide" :key="index"
@@ -49,6 +55,27 @@ onMounted(() => useEffectStore().initSlidesChangeAuto());
     .slides {
         display: flex;
         justify-content: center;
+        align-items: center;
+        margin: 5px 0;
+
+        .arrow {
+            background-color: #f6767f;
+            color: var(--text-color);
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            margin: 0 5px;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--primary);
+                transition: 0.3s all;
+            }
+        }
 
         span {
             font-size: 30px;

@@ -1,7 +1,7 @@
 import css from '@/assets/icons/icon-css.svg';
 import html from '@/assets/icons/icon-html.svg';
 import javascript from '@/assets/icons/icon-javascript.svg';
-// import mongodb from '@/assets/icons/icon-mongodb.svg';
+import mongodb from '@/assets/icons/icon-mongodb.svg';
 import mysql from '@/assets/icons/icon-mysql.svg';
 import node from '@/assets/icons/icon-nodejs.svg';
 import react from '@/assets/icons/icon-react.svg';
@@ -167,9 +167,19 @@ export const data = [
             },
             {
                 id: 2,
-                name: "Sass",
-                picture: sass,
+                name: "TailwindCSS",
+                picture: tailwind,
             },
+            {
+                id: 3,
+                name: "NodeJS",
+                picture: node,
+            },
+            {
+                id: 4,
+                name: "MongoDB",
+                picture: mongodb,
+            }
         ]
     },
     {

@@ -28,7 +28,6 @@ onMounted(() => {
   }
   const observer = new IntersectionObserver(handleIntersect, options);
   document.querySelectorAll('section').forEach(function (r) {
-    console.log(r);
     observer.observe(r);
   })
 });
@@ -43,12 +42,10 @@ function scrollToTop() {
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > document.querySelector('header').clientHeight + document.querySelector('.home').clientHeight) {
-    console.log('visible');
     showButton.value = true;
     document.querySelector('.backtotop').classList.remove('display__hidden');
     document.querySelector('.backtotop').classList.add('display__visible');
   } else if (showButton.value == true && window.scrollY < document.querySelector('header').clientHeight + document.querySelector('.home').clientHeight) {
-    console.log('invisible');
     showButton.value = false;
     document.querySelector('.backtotop').classList.remove('display__visible');
     document.querySelector('.backtotop').classList.add('display__hidden');
@@ -67,6 +64,7 @@ function hiddenButton(e) {
     }, 100);
   }
 }
+
 </script>
 
 <template>

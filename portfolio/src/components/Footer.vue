@@ -13,7 +13,7 @@
                 </a>
             </div>
             <div class="footer__container__copyright">
-                <p>© 2022 michelvieira.com</p>
+                <p>© 2022 michelvieira.fr</p>
             </div>
         </div>
     </footer>
