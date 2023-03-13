@@ -117,7 +117,7 @@ export const data = [
         techno: "Sass, VueJS, NodeJS, MySQL, Redis, Socket.io",
         background: 'background-color: #fed7d7',
         picture: groupomania,
-        url: "http://185.224.139.102:8080/",
+        url: "https://github.com/VIEIRA-Michel/Groupomania",
         techno: [
             {
                 id: 1,
@@ -158,7 +158,7 @@ export const data = [
         techno: "React, Sass",
         background: 'background-color: #cfcff7',
         picture: supakanban,
-        url: "https://supakanban.michelvieira.fr",
+        url: "https://github.com/VIEIRA-Michel/supaKanban",
         techno: [
             {
                 id: 1,
